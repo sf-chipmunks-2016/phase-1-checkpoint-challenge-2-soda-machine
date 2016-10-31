@@ -19,7 +19,8 @@ class SodaMachine
 
   def sell(soda_brand)
     # searches through the sodas variable and finds a specific soda with the specific brand
-    if find_soda(soda_brand)
+    soda = find_soda(soda_brand)
+    if soda
       # if true adds that soda into the cash variable
       self.cash += soda.price
       # then deletes that soda from the machine
