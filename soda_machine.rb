@@ -13,15 +13,17 @@ class SodaMachine
   end
 
   def find_soda(soda_brand)
-    self.sodas.find { |soda| return soda if soda.brand == soda_brand }
+    # searches for the specific soda in
+    self.sodas.find { |soda| soda if soda.brand == soda_brand }
   end
 
   def sell(soda_brand)
-    self.sodas.find do |soda|
-      if soda.brand == soda_brand
-        self.cash += soda.price
-        self.sodas.delete(soda)
-      end
+    # searches through the sodas variable and finds a specific soda with the specific brand
+    if find_soda(soda_brand)
+      # if true adds that soda into the cash variable
+      self.cash += soda.price
+      # then deletes that soda from the machine
+      self.sodas.delete(soda)
     end
   end
 
