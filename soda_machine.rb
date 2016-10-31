@@ -12,31 +12,30 @@ class SodaMachine
   end
 
   def find_soda(soda_brand)
-    sodas.select do |soda| 
+    sodas_machine.each do |soda| 
       if soda == soda_brand
         return soda
-      elsif soda != soda_brand
+      else
         return nil
       end
     end
   end
 
   def sell(soda_brand)
-    if sodas.include?(soda_brand) == false
+    if soda_machine.include?(soda_brand) == false
       return nil
     else
       @sold_soda = soda_brand
-        soda_machine.select do |soda| 
+        soda_machine.map do |soda| 
           if soda == soda_brand
-            cash == 2.00
+            cash += 2.00
             soda_machine.delete(soda)
+          else
           end
         end
     end
   end
 
-  def cash
-    soda_machine.each do 
-  end
-
 end
+
+p soda_machine.sodas
