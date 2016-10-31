@@ -6,7 +6,7 @@ describe SodaMachine do
   let (:coke_zero) { Soda.new(brand: 'Coke Zero', price: 1.00) }
   let (:second_pepsi) { Soda.new(brand: 'Pepsi', price: 0.65) }
 
-  let(:soda_machine) { SodaMachine.new(sodas: [pepsi, mountain_dew, coke_zero, second_pepsi], cash: 1.00) }
+  let(:soda_machine) { SodaMachine.new(sodas: ['pepsi', 'mountain_dew', 'coke_zero', 'second_pepsi'], cash: 1.00) }
 
   describe "#current_inventory_count", { current_inventory_count: true } do
     it "returns the number of sodas in the machine" do
@@ -17,7 +17,7 @@ describe SodaMachine do
   describe "#find_soda", { find_soda: true } do
     context "when the soda is in the machine" do
       it "returns the first instance of the soda brand the user requested" do
-        expect(soda_machine.find_soda('Mountain Dew')).to eq(mountain_dew)
+        expect(soda_machine.find_soda('Mountain Dew')).to eq('mountain_dew')
       end
     end
 
@@ -40,13 +40,13 @@ describe SodaMachine do
         @sold_soda = soda_machine.sell('Coke Zero')
       end
       it "returns the sold soda" do
-        expect(@sold_soda).to be(coke_zero)
+        expect(@sold_soda).to be('coke_zero')
       end
       it "adds the price of the soda sold to the cash" do
         expect(soda_machine.cash).to eq(2.00)
       end
       it "removes the sold soda from the machine" do
-        expect(soda_machine.sodas).not_to include(coke_zero)
+        expect(soda_machine.sodas).not_to include('coke_zero')
       end
     end
   end
