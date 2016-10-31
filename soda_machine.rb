@@ -22,6 +22,21 @@ class SodaMachine
   end
 
   def sell(soda_brand)
+    if sodas.include?(soda_brand) == false
+      return nil
+    else
+      @sold_soda = soda_brand
+        soda_machine.select do |soda| 
+          if soda == soda_brand
+            cash == 2.00
+            soda_machine.delete(soda)
+          end
+        end
+    end
+  end
+
+  def cash
+    soda_machine.each do 
   end
 
 end
