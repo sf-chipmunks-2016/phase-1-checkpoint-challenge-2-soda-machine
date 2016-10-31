@@ -18,12 +18,10 @@ class SodaMachine
     removed_soda, kept_sodas = @sodas.partition do |soda|
       soda.brand == soda_brand
     end
-
     removed_soda.each do |soda|
       @sodas.delete(soda)
       @cash += soda.price
     end
     removed_soda ? removed_soda.first : nil
   end
-
 end
