@@ -22,5 +22,4 @@ class SodaMachine
     @cash += soda.price
     @sodas.delete_at(sodas.index(soda))
   end
-
 end
