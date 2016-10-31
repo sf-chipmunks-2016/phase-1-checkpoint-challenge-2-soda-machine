@@ -16,6 +16,12 @@ class SodaMachine
 
   def sell(soda_brand)
     removed_soda = nil
+    # brand_names = @sodas.map(&:brand)
+    # index_soda_to_delete = brand_names.index(soda_brand)
+    # if index_soda_to_delete
+    #   removed_soda = @sodas.delete_at(index_soda_to_delete)
+    #   @cash += removed_soda.price
+    # end
     @sodas.each do |soda|
       if soda.brand == soda_brand
         removed_soda = @sodas.delete(soda)
