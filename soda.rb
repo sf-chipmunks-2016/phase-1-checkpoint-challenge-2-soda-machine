@@ -1,5 +1,5 @@
 class Soda
-  attr_reader :brand, :price
+  attr_reader :brand, :price, :sodas
 
   def initialize(args = {})
     @brand = args[:brand]
