@@ -40,13 +40,13 @@ describe SodaMachine do
         @sold_soda = soda_machine.sell('Coke Zero')
       end
       it "returns the sold soda" do
-        expect(@sold_soda).to be(coke_zero)
+        expect(@sold_soda).to be('coke_zero')
       end
       it "adds the price of the soda sold to the cash" do
         expect(soda_machine.cash).to eq(2.00)
       end
       it "removes the sold soda from the machine" do
-        expect(soda_machine.sodas).not_to include(coke_zero)
+        expect(soda_machine.sodas).not_to include('coke_zero')
       end
     end
   end
