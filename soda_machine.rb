@@ -31,7 +31,7 @@ end
 
 # p pepsi = Soda.new(brand: 'Pepsi', price: 0.65) 
 # p coke_zero = Soda.new(brand: 'Coke_Zero', price: 1.00)
-# new_machine = SodaMachine.new(sodas: [pepsi, coke_zero], cash: 1.00)
+# new_machine = SodaMachine.new(sodas: [pepsi, coke_zero], cash: 1.65)
 # p new_machine.sodas
 # p new_machine.cash
 # p new_machine.current_inventory_count
