@@ -1,12 +1,15 @@
 require_relative "spec_helper"
 
 describe SodaMachine do
+  #creating new instances of the soda class
   let (:pepsi) { Soda.new(brand: 'Pepsi', price: 0.65) }
   let (:mountain_dew) { Soda.new(brand: 'Mountain Dew', price: 0.75) }
   let (:coke_zero) { Soda.new(brand: 'Coke Zero', price: 1.00) }
   let (:second_pepsi) { Soda.new(brand: 'Pepsi', price: 0.65) }
 
   let(:soda_machine) { SodaMachine.new(sodas: [pepsi, mountain_dew, coke_zero, second_pepsi], cash: 1.00) }
+  #creating a new instance of the Soda machine with the soda instances passed as parameter
+  #sodas is an array
 
   describe "#current_inventory_count", { current_inventory_count: true } do
     it "returns the number of sodas in the machine" do
@@ -18,6 +21,7 @@ describe SodaMachine do
     context "when the soda is in the machine" do
       it "returns the first instance of the soda brand the user requested" do
         expect(soda_machine.find_soda('Mountain Dew')).to eq(mountain_dew)
+        #pass in a string but equals an object
       end
     end
 

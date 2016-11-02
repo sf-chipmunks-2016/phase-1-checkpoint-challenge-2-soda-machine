@@ -11,18 +11,19 @@ class SodaMachine
   end
 
   def find_soda(soda_brand)
-    #@sodas.find {|name| name = soda_brand}
-    #@sodas.select {|name| name = soda_brand}
-    #@sodas.detect{|name| name = soda_brand}
-    #@sodas.index(soda_brand)
-    #these are all the methods I attempted to use, but none passed the tests.
+    @sodas.find {|soda| soda.brand == soda_brand}
   end
 
   def sell(soda_brand)
-  #@sodas.delete(soda_brand)
-  # @sodas.reject(soda_brand)
-  # I want a method that will return the array without the deleted soda
-  #  @cash += @sodas[:price]
+    #using the find method since it's already written and it returns the soda
+    sold_soda = find_soda(soda_brand)
+      if sold_soda
+        #cash will increase by the cost of the soda
+        @cash += sold_soda.price
+        @sodas.delete(sold_soda)
+      else
+        nil
+      end
   end
 
 end
